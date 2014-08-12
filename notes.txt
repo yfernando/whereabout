@@ -1,0 +1,38 @@
+Main High level features
+
+* User registration
+* User login
+* Invite friends
+* View friends activity feed
+* Search nearby pois
+* View poi information
+* Manage custom categories
+* Manage custom pois
+* Add comments and ratings for a poi
+* Get directions to a poi
+
+
+======================================
+* User management
+ - User signs up -- done
+ - User log in
+ - Change details
+ - View user profile
+
+* Friends
+ - Invite friend
+ - View friend activity feed
+ - Request friendship
+ 
+* Category
+ - manage custom category
+ 
+* Pois
+ - Manage a poi
+ - Comment on a poi
+ - Star rate a poi
+ - Assign to a category
+ - Get directions
+ 
+ 
+ 
