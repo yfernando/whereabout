@@ -34,5 +34,7 @@ Main High level features
  - Assign to a category
  - Get directions
  
- 
+ 12/08 HW:
+ 1. Fill all the step defs for signup
+ 2. Write feature files for the rest (above)
  
