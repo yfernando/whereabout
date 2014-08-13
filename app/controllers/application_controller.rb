@@ -11,8 +11,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def layout_by_resource
-    puts params[:controller]
-    puts params[:action]    
     controller_action = "#{params[:controller]}/#{params[:action]}"
 
     case controller_action
