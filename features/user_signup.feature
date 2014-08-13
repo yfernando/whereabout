@@ -8,13 +8,13 @@ Feature: User sign up
   Scenario: Signup user
     Given I am not already registered
     When I visit the sign up page
-    And I submit the form with my details
+    And I submit the Signup form with my details
     Then I should see the search page
     
     
   Scenario: Already registered
     Given I am already registered in the application
     When I visit the sign up page
-    And I submit the form with my details
+    And I submit the Signup form with my details
     Then I should see a message "Email has already been taken"
     
