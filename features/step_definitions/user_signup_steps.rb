@@ -9,10 +9,10 @@ end
 
 When(/^I submit the Signup form with my details$/) do
   
-  within(".new_user") do 
+  within("#new_user") do 
     fill_in 'Email', :with => 'test@gmail.com'
     fill_in 'Password', :with => 'password'
-    fill_in 'Password confirmation', :with => 'password'
+    fill_in 'Password Confirmation', :with => 'password'
   end
   click_button 'Sign up'
 end    
