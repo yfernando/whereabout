@@ -43,4 +43,8 @@ Main High level features
  1. Finished the  Signup/Sign in featuer
  2. Start UI Work
  
+ 14/08:
+ 1. Add styles to Signup and Password
+ 2. Add styles to MyAccount page **** HW ******
+ 3. Start Category and Pois Featuers and Steps
  
