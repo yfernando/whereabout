@@ -48,5 +48,5 @@ Main High level features
  1. Add styles to Signup and Password  -- done
  2. Add styles to MyAccount page **** HW ******
  3. Implment Categories (CRUD) - implement all steps  -- done
- 4. Add styles to Categories page
+ 4. Add styles to Categories page as per http://getbootstrap.com/css/#tables
  
