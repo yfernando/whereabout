@@ -9,31 +9,23 @@ When(/^I visit the category page$/) do
   visit categories_path
 end
 
-Then(/^I should see a list of categories created by me$/) do
+Then(/^I should see a list of categories$/) do
   expect(page).to have_selector('table tr')
 end
 
 When(/^I create a category$/) do
-  pending # express the regexp above with the code you wish you had
-end
+  #visit new_category_path
+  click_link('New Category')
+  fill_in 'Name', :with => 'Test_Food' 
+  click_button('Create Category')
+end             
 
-Then(/^I should see the new category in the list$/) do
-  p‰ending # express the regexp above with the code you wish you had
-end
-
-When(/^I update a category name$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should see the updated category in the list$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^I delete a category$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should not see that category in the list$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
+When(/^I update the name of that category$/) do  
+  click_link('Edit')
+  fill_in 'Name', :with => 'Test_Food_Updated' 
+  click_button('Update Category')    
+end                                                                                                                                                                                                                                            
+When(/^I delete that category$/) do
+  click_link('Back')
+  find('tr', :text => 'Test_Food').click_link('Destroy')
+end 

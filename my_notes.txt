@@ -25,7 +25,7 @@ Main High level features
  - Request friendship
  
 * Category
- - manage custom category
+ - Manage custom categories (CRUD)
  
 * Pois
  - Manage a poi
@@ -35,16 +35,18 @@ Main High level features
  - Get directions
 ========================================
 
+
  12/08 HW:
- 1. Fill all the step defs for signup
+ 1. Fill all the step defs for signup -- done
  2. Write feature files for the rest (above)
 
  13/08:
- 1. Finished the  Signup/Sign in featuer
+ 1. Finished the  Signup/Signin featuer -- done
  2. Start UI Work
  
  14/08:
- 1. Add styles to Signup and Password
+ 1. Add styles to Signup and Password  -- done
  2. Add styles to MyAccount page **** HW ******
- 3. Start Category and Pois Featuers and Steps
+ 3. Implment Categories (CRUD) - implement all steps  -- done
+ 4. Add styles to Categories page
  
