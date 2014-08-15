@@ -19,11 +19,6 @@ Main High level features
  - Change details ******* implemented by Devise but write Cuce tests as HW ********
  - View user profile ******** implemented by Devise but write Cuce tests as HW ********
 
-* Friends
- - Invite friend
- - View friend activity feed
- - Request friendship
- 
 * Category
  - Manage custom categories (CRUD)
  
@@ -33,6 +28,13 @@ Main High level features
  - Star rate a poi
  - Assign to a category
  - Get directions
+
+* Friends
+ - Invite friend
+ - View friend activity feed
+ - Request friendship
+ 
+
 ========================================
 
 
@@ -46,7 +48,10 @@ Main High level features
  
  14/08:
  1. Add styles to Signup and Password  -- done
- 2. Add styles to MyAccount page **** HW ******
- 3. Implment Categories (CRUD) - implement all steps  -- done
+ 2. Implment Categories (CRUD) - implement all steps  -- done
+ 3. Add styles to MyAccount page **** HW ******
  4. Add styles to Categories page as per http://getbootstrap.com/css/#tables
+ 
+ 15/08:
+ 
  
