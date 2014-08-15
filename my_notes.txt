@@ -34,6 +34,7 @@ Main High level features
  - View friend activity feed
  - Request friendship
  
+* Salutation
 
 ========================================
 
@@ -49,9 +50,7 @@ Main High level features
  14/08:
  1. Add styles to Signup and Password  -- done
  2. Implment Categories (CRUD) - implement all steps  -- done
- 3. Add styles to MyAccount page **** HW ******
- 4. Add styles to Categories page as per http://getbootstrap.com/css/#tables
- 
+
  15/08:
- 
- 
+ 1. Add styles to MyAccount page -- done 
+ 2. Add styles to Categories page as per http://getbootstrap.com/css/#tables
