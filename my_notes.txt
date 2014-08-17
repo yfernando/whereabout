@@ -45,7 +45,7 @@ Main High level features
 
  13/08:
  1. Finished the  Signup/Signin featuer -- done
- 2. Start UI Work
+ 2. Start UI Work 
  
  14/08:
  1. Add styles to Signup and Password  -- done
@@ -54,3 +54,5 @@ Main High level features
  15/08:
  1. Add styles to MyAccount page -- done 
  2. Add styles to Categories page as per http://getbootstrap.com/css/#tables
+ 
+ 

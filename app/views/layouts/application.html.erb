@@ -20,19 +20,22 @@
         <%= link_to "Whereabout", search_path, class: "navbar-brand" %>
       </div>
       <div class="navbar-collapse collapse">
-         <form class="navbar-form navbar-left" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="place" class="form-control">
-            </div>
-             <div class="form-group">
-                <input type="text" placeholder="location" class="form-control">
-              </div>
-            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
-          </form>
+        <form class="navbar-form navbar-left" role="form">
+          <div class="form-group">
+            <input type="text" placeholder="place" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="location" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
+        
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to('My Account', edit_user_registration_path) %></li>
+          <li><%= link_to('My Categories ', categories_path) %></li>
           <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>          
         </ul>
+        
       </div><!--/.nav-collapse -->
     </div>
   </div>
