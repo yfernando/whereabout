@@ -19,27 +19,24 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe CategoriesController, :type => :controller do
+  
+  before(:each) do
+    user = User.create email: "test1@gmail.com", id: 1
+    expect(@request.env["warden"]).to receive(:authenticate!).and_return(user).at_least(:once)
+    expect(controller).to receive(:current_user).and_return(user).at_least(:once)
+  end
 
   # This should return the minimal set of attributes required to create a valid
   # Category. As you add validations to Category, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) { {user_id: 1} }
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
-
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # CategoriesController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
 
   describe "GET index" do
     it "assigns all categories as @categories" do
       category = Category.create! valid_attributes
-      get :index, {}, valid_session
+      
+      get :index
       expect(assigns(:categories)).to eq([category])
     end
   end
@@ -47,14 +44,14 @@ RSpec.describe CategoriesController, :type => :controller do
   describe "GET show" do
     it "assigns the requested category as @category" do
       category = Category.create! valid_attributes
-      get :show, {:id => category.to_param}, valid_session
+      get :show, {:id => category.to_param}
       expect(assigns(:category)).to eq(category)
     end
   end
 
   describe "GET new" do
     it "assigns a new category as @category" do
-      get :new, {}, valid_session
+      get :new, {}
       expect(assigns(:category)).to be_a_new(Category)
     end
   end
@@ -62,7 +59,7 @@ RSpec.describe CategoriesController, :type => :controller do
   describe "GET edit" do
     it "assigns the requested category as @category" do
       category = Category.create! valid_attributes
-      get :edit, {:id => category.to_param}, valid_session
+      get :edit, {:id => category.to_param}
       expect(assigns(:category)).to eq(category)
     end
   end
@@ -71,87 +68,63 @@ RSpec.describe CategoriesController, :type => :controller do
     describe "with valid params" do
       it "creates a new Category" do
         expect {
-          post :create, {:category => valid_attributes}, valid_session
+          post :create, {:category => valid_attributes}
         }.to change(Category, :count).by(1)
       end
 
       it "assigns a newly created category as @category" do
-        post :create, {:category => valid_attributes}, valid_session
+        post :create, {:category => valid_attributes}
         expect(assigns(:category)).to be_a(Category)
         expect(assigns(:category)).to be_persisted
       end
 
       it "redirects to the created category" do
-        post :create, {:category => valid_attributes}, valid_session
+        post :create, {:category => valid_attributes}
         expect(response).to redirect_to(Category.last)
       end
     end
 
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved category as @category" do
-        post :create, {:category => invalid_attributes}, valid_session
-        expect(assigns(:category)).to be_a_new(Category)
-      end
-
-      it "re-renders the 'new' template" do
-        post :create, {:category => invalid_attributes}, valid_session
-        expect(response).to render_template("new")
-      end
-    end
   end
 
   describe "PUT update" do
     describe "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { name: "my new category name"}
       }
 
       it "updates the requested category" do
         category = Category.create! valid_attributes
-        put :update, {:id => category.to_param, :category => new_attributes}, valid_session
+        put :update, {:id => category.to_param, :category => new_attributes}
         category.reload
-        skip("Add assertions for updated state")
+        expect(category.name).to eq "my new category name"
       end
 
       it "assigns the requested category as @category" do
         category = Category.create! valid_attributes
-        put :update, {:id => category.to_param, :category => valid_attributes}, valid_session
+        put :update, {:id => category.to_param, :category => valid_attributes}
         expect(assigns(:category)).to eq(category)
       end
 
       it "redirects to the category" do
         category = Category.create! valid_attributes
-        put :update, {:id => category.to_param, :category => valid_attributes}, valid_session
+        put :update, {:id => category.to_param, :category => valid_attributes}
         expect(response).to redirect_to(category)
       end
     end
 
-    describe "with invalid params" do
-      it "assigns the category as @category" do
-        category = Category.create! valid_attributes
-        put :update, {:id => category.to_param, :category => invalid_attributes}, valid_session
-        expect(assigns(:category)).to eq(category)
-      end
-
-      it "re-renders the 'edit' template" do
-        category = Category.create! valid_attributes
-        put :update, {:id => category.to_param, :category => invalid_attributes}, valid_session
-        expect(response).to render_template("edit")
-      end
-    end
   end
 
   describe "DELETE destroy" do
     it "destroys the requested category" do
       category = Category.create! valid_attributes
       expect {
-        delete :destroy, {:id => category.to_param}, valid_session
+        delete :destroy, {:id => category.to_param}
       }.to change(Category, :count).by(-1)
     end
 
     it "redirects to the categories list" do
       category = Category.create! valid_attributes
-      delete :destroy, {:id => category.to_param}, valid_session
+      delete :destroy, {:id => category.to_param}
       expect(response).to redirect_to(categories_url)
     end
   end
