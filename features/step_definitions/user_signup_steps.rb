@@ -23,8 +23,7 @@ Then(/^I should see the search page$/) do
 end 
 
 Given(/^I am already registered in the application$/) do 
-  user = User.create(email: "test@gmail.com", password: "password")
-  user = User.find_by(email: 'test@gmail.com')
+  user = signup_user "test@gmail.com", "password"
   expect(user).to_not be_nil
 end   
 

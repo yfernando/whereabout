@@ -55,4 +55,8 @@ Main High level features
  1. Add styles to MyAccount page -- done 
  2. Add styles to Categories page as per http://getbootstrap.com/css/#tables
  
- 
+ 19/08
+ 1. add buttons to category list  ****** HW *********
+ 2.  - Change details ******* implemented by Devise but write Cuce tests as HW ********
+ 3. - View user profile ******** implemented by Devise but write Cuce tests as HW ********
+ 4. Leading Snowflakes - buy

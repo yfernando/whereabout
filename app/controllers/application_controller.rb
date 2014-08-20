@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     controller_action = "#{params[:controller]}/#{params[:action]}"
 
     case controller_action
-    when "devise/passwords/new", "devise/passwords/create", 
+    when "devise/passwords/new", "devise/passwords/create", "devise/passwords/edit",
       "devise/sessions/new", "devise/sessions/create",
       "devise/registrations/new", "devise/registrations/create"
       "no_layout"
