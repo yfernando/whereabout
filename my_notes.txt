@@ -60,3 +60,7 @@ Main High level features
  2.  - Change details ******* implemented by Devise but write Cuce tests as HW ********
  3. - View user profile ******** implemented by Devise but write Cuce tests as HW ********
  4. Leading Snowflakes - buy
+ 
+ 20/08
+ 1. modify the poi form to include the attributes (see diagram)  *** HW ****
+ 2. implement poi steps *** HW ****

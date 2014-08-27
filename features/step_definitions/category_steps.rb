@@ -55,4 +55,5 @@ end
 Then(/^I should see two categories in the categoty list$/) do 
   categories = User.find_by(email: 'test2@gmail.com').categories
   expect(categories.size).to eq 2
-end        
+  
+end 
