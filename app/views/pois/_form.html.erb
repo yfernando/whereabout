@@ -16,15 +16,11 @@
 
   <%= f.label :description %>
   <%= f.text_area :description, autofocus: true, class: "form-control", placeholder: "Enter Poi Description" %>
-  
-  <%= f.label :category %>
-  <%= f.select(:category_id, options_from_collection_for_select(current_user.categories, :id, :name, @poi.category_id), { class: 'form-control', include_blank: 'Select a category'})  %>
 
-<!-- <select class="form-control">
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-</select> -->
+  <%= f.label :category_id %>
+  <%= f.select(:category_id, options_from_collection_for_select(current_user.categories, :id, :name, @poi.category_id), {include_blank: 'Select a category'}, { class: 'form-control', })  %>
+
+  <br/>
 
   <%= f.label :longitude %>
   <%= f.text_field :longitude, autofocus: true, class: "form-control", placeholder: "Enter longitude" %>

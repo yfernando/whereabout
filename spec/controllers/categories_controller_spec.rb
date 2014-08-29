@@ -19,9 +19,9 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe CategoriesController, :type => :controller do
-  
+
   before(:each) do
-    user = User.create email: "test1@gmail.com", id: 1
+    user = User.create! email: "test1@gmail.com", id: 1, password: 'password'
     expect(@request.env["warden"]).to receive(:authenticate!).and_return(user).at_least(:once)
     expect(controller).to receive(:current_user).and_return(user).at_least(:once)
   end
@@ -31,11 +31,9 @@ RSpec.describe CategoriesController, :type => :controller do
   # adjust the attributes here as well.
   let(:valid_attributes) { {user_id: 1} }
 
-
   describe "GET index" do
     it "assigns all categories as @categories" do
       category = Category.create! valid_attributes
-      
       get :index
       expect(assigns(:categories)).to eq([category])
     end
