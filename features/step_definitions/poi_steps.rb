@@ -3,13 +3,14 @@ When(/^I visit the poi listing page$/) do
 end
 
 Then(/^I should see a list of pois that belongs to me$/) do
+  step "I create a poi"
   pois = Poi.find_by(email: 'test@gmail.com').pois
   expect(pois).to_not be nil
   expect(page).to have_selector('table tr')
 end
 
 When(/^I create a poi$/) do
-  pending # express the regexp above with the code you wish you had
+  visit new_poi_path
 end
 
 When(/^I update the name, longitude and latidude of that poi$/) do

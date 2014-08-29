@@ -11,7 +11,30 @@
     </div>
   <% end %>
 
+  <%= f.label :name %>
+  <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "Enter Poi name" %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, autofocus: true, class: "form-control", placeholder: "Enter Poi Description" %>
+  
+  <%= f.label :category %>
+  <%= f.select(:category_id, options_from_collection_for_select(current_user.categories, :id, :name, @poi.category_id), { class: 'form-control', include_blank: 'Select a category'})  %>
+
+<!-- <select class="form-control">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+</select> -->
+
+  <%= f.label :longitude %>
+  <%= f.text_field :longitude, autofocus: true, class: "form-control", placeholder: "Enter longitude" %>
+
+  <%= f.label :latitude %>
+  <%= f.text_field :latitude, autofocus: true, class: "form-control", placeholder: "Enter latitude" %>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, class: "actions btn btn-lg btn-primary btn-block" %>
   </div>
+  <br />
+
 <% end %>

@@ -1,10 +1,11 @@
 class PoisController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_poi, only: [:show, :edit, :update, :destroy]
 
   # GET /pois
   # GET /pois.json
   def index
-    @pois = Poi.all
+    @pois = current_user.pois
   end
 
   # GET /pois/1
@@ -14,7 +15,7 @@ class PoisController < ApplicationController
 
   # GET /pois/new
   def new
-    @poi = Poi.new
+    @poi = current_user.pois.new
   end
 
   # GET /pois/1/edit
@@ -24,7 +25,7 @@ class PoisController < ApplicationController
   # POST /pois
   # POST /pois.json
   def create
-    @poi = Poi.new(poi_params)
+    @poi = current_user.pois.new(poi_params)
 
     respond_to do |format|
       if @poi.save
@@ -64,11 +65,11 @@ class PoisController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_poi
-      @poi = Poi.find(params[:id])
+      @poi = current_user.pois.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poi_params
-      params[:poi]
+      params.require(:poi).permit(:name, :description, :category_id)
     end
 end
