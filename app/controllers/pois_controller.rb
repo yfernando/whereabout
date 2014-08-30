@@ -70,6 +70,6 @@ class PoisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poi_params
-      params.require(:poi).permit(:name, :description, :category_id)
+      params.require(:poi).permit(:name, :description, :category_id, :latitude, :longitude)
     end
 end
