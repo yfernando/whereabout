@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Whereabout</title>  
+  <title>Whereabout</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZuBULFNVKHkibpTcLOOwoZR5QwPg6VIs"></script>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>  
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -30,7 +30,7 @@
           </div>
           <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
         </form>
-        
+
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= image_tag current_user.gravatar_url %> <%= current_user.email %> <span class="caret"></span></a>
@@ -40,14 +40,14 @@
               <li><%= link_to('My Pois ', pois_path) %></li>
             </ul>
           </li>
-          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>          
+          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
         </ul>
-        
+
       </div><!--/.nav-collapse -->
     </div>
   </div>
 
-  <div class="container">  
+  <div class="container-fluid">  
     <%= render "flash_messages" %>
 
     <%= yield %>
