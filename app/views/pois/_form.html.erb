@@ -18,9 +18,7 @@
   <%= f.text_area :description, autofocus: true, class: "form-control", placeholder: "Enter Poi Description" %>
 
   <%= f.label :category_id %>
-  <%= f.select(:category_id, options_from_collection_for_select(current_user.categories, :id, :name, @poi.category_id), {include_blank: 'Select a category'}, { class: 'form-control', })  %>
-
-  <br/>
+  <%= f.select(:category_id, options_from_collection_for_select(current_user.categories, :id, :name, @poi.category_id), {include_blank: 'Select a category'}, { class: 'form-control' })  %>
 
   <%= f.label :latitude %>
   <%= f.text_field :latitude, autofocus: true, class: "form-control", placeholder: "Enter the latitude" %>
