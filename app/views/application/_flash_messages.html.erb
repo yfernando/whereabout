@@ -1,3 +1,39 @@
-<%= content_tag(:div, flash[:error], id: "flash_error", class: "alert alert-danger", role: "alert" ) if flash[:error] %>
-<%= content_tag(:div, flash[:notice], :id => "flash_notice", class: "alert alert-info", role: "alert") if flash[:notice] %>
-<%= content_tag(:div, flash[:alert], :id => "flash_alert", class: "alert alert-danger", role: "alert") if flash[:alert] %>
+<% if flash[:error] %>
+  <%= content_tag(:div, id: "flash_error", class: "alert alert-danger alert-dismissible", role: "alert" ) do %>
+    <button type="button" class="close" data-dismiss="alert">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+    </button>
+    <%= flash[:error] %>
+  <% end %>
+<% end %>
+
+<% if flash[:notice] %>
+  <%= content_tag(:div, id: "flash_notice", class: "alert alert-info alert-dismissible", role: "alert" ) do %>
+    <button type="button" class="close" data-dismiss="alert">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+    </button>
+    <%= flash[:notice] %>
+  <% end %>
+<% end %>
+
+<% if flash[:alert] %>
+  <%= content_tag(:div, id: "flash_alert", class: "alert alert-warning alert-dismissible", role: "alert" ) do %>
+    <button type="button" class="close" data-dismiss="alert">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+    </button>
+    <%= flash[:alert] %>
+  <% end %>
+<% end %>
+
+<% if flash[:sucess] %>
+  <%= content_tag(:div, id: "flash_sucess", class: "alert alert-sucess alert-dismissible", role: "alert" ) do %>
+    <button type="button" class="close" data-dismiss="alert">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+    </button>
+    <%= flash[:sucess] %>
+  <% end %>
+<% end %>

@@ -30,7 +30,7 @@ RSpec.describe PoisController, :type => :controller do
   # This should return the minimal set of attributes required to create a valid
   # Poi. As you add validations to Poi, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { {category_id: @category.id} }
+  let(:valid_attributes) { {name: 'Poi 1', latitude: 14.345, longitude: -0.345, category_id: @category.id} }
 
   describe "GET index" do
     it "assigns all pois as @pois" do

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <% if @friends.any? %>
+        <h1>Friends List:</h1>
+        <ul>
+          <% @friends.each do |friend| %>
+            <li>
+              <kbd><%= friend.email %></kbd>
+              <%= link_to 'Remove friend', remove_friend_path(friend.id), class: 'btn btn-danger btn-xs' %> 
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <h1>You haven't added any friend yet. <%= link_to('Invite a friend', new_invitation_path, class: 'btn btn-primary') %></h1>
+      <% end %>
+    </div>
+  </div>
+</div>

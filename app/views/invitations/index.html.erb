@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <% if @invitations.any? %>
+        <h1>Pending Friend Requests:</h1>
+        <ul>
+          <% @invitations.each do |invitation| %>
+            <li>
+              From <kbd><%= invitation.from %></kbd>
+              <%= link_to 'Accept request', accept_invitation_path(invitation), class: 'btn btn-success btn-xs' %> 
+              <%= link_to 'Reject request', reject_invitation_path(invitation), class: 'btn btn-danger btn-xs' %> 
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <h1>You don't have any pending friend request</h1>
+      <% end %>
+    </div>
+  </div>
+</div>
