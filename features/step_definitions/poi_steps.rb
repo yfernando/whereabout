@@ -13,8 +13,8 @@ When(/^I visit the poi listing page$/) do
   visit pois_path
 end
 
-Then(/^I should see a list of pois that belongs to me$/) do
-  expect(page).to have_selector('table tr')
+Then(/^I should see a list of pois in a map$/) do
+  expect(page).to have_selector('div', 'map-container')
 end
 
 When(/^I create a poi$/) do

@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-md-3 sidebar">
+    <%= link_to 'New Poi', new_poi_path, class:'btn btn-primary' if display_new_button %>
+      <% @pois.each do |poi| %>
+        <div class="poi-list">
+          <h3><%= poi.name %></h3>
+          <p>
+            <%= poi.description %>
+          </p>
+          <% if display_poi_actions %>
+          <%= link_to 'Edit', edit_poi_path(poi) %>
+          <%= link_to 'Delete', poi, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+  <div class="col-md-9 main">
+    <script type="text/javascript">
+      function initialize() {
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"), {zoom: 15});
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position){
+            var userLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            map.setCenter(userLocation);
+          });
+        }
+
+        <% pois.each do |poi| %>
+
+             var poiMarker<%= poi.id %> = new google.maps.Marker({
+              position: new google.maps.LatLng(<%= poi.latitude %>,<%= poi.longitude %>),
+              map: map,
+              title: "<%= poi.name %>"
+             });
+
+             var infoWindowForMarker<%= poi.id %> = new google.maps.InfoWindow({
+               content: "<%= poi.description %>"
+             });
+
+             google.maps.event.addListener(poiMarker<%= poi.id %>, 'click', function() {
+               infoWindowForMarker<%= poi.id %>.open(map, poiMarker<%= poi.id %>);
+             });
+
+        <% end %>
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+    <div id="map-canvas"></div>
+  </div>
+</div>

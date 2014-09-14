@@ -3,12 +3,17 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   layout :layout_by_resource
+  before_filter :set_system_categories
   
   def after_sign_in_path_for(resource)
     search_path
   end
 
   protected
+  
+  def set_system_categories
+    @system_categories = Category.where(user_id: nil)
+  end
 
   def layout_by_resource
     controller_action = "#{params[:controller]}/#{params[:action]}"

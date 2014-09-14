@@ -1,15 +1,1 @@
-<div class="jumbotron">
-  <h1>Where do you want to go today ?</h1>
-  <div class="row">
-    <form class="form-inline" role="form">
-      <div class="form-group">
-        <input type="text" placeholder="place" class="form-control">
-      </div>
-      <div class="form-group">
-        <input type="text" placeholder="location" class="form-control">
-      </div>
-      <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
-    </form>
-  </div>
-  <p>&nbsp;</p>
-</div>
+<%= render partial: 'pois/pois_map', locals: {pois: @pois, display_new_button: false, display_poi_actions: false }%>

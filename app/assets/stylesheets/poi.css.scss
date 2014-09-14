@@ -35,6 +35,11 @@
    width: 100%;
 }
 
+.sidebar {
+  height: 700px;
+  overflow: scroll;
+}
+
 .poi-list {
   border-bottom: 1px solid;
   margin-bottom: 5px;

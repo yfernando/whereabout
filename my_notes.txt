@@ -21,7 +21,7 @@ Main High level features
 
 * Category
  - Manage custom categories (CRUD)
- 
+
 * Pois
  - Manage a poi
  - Comment on a poi
@@ -33,7 +33,7 @@ Main High level features
  - Invite friend
  - View friend activity feed
  - Request friendship
- 
+
 * Salutation
 
 ========================================
@@ -45,22 +45,31 @@ Main High level features
 
  13/08:
  1. Finished the  Signup/Signin featuer -- done
- 2. Start UI Work 
- 
+ 2. Start UI Work
+
  14/08:
  1. Add styles to Signup and Password  -- done
  2. Implment Categories (CRUD) - implement all steps  -- done
 
  15/08:
- 1. Add styles to MyAccount page -- done 
+ 1. Add styles to MyAccount page -- done
  2. Add styles to Categories page as per http://getbootstrap.com/css/#tables
- 
+
  19/08
  1. Add buttons to category list  ****** HW *********
  2. Change details ******* implemented by Devise but write Cuce tests as HW ********
  3. View user profile ******** implemented by Devise but write Cuce tests as HW ********
  4. Leading Snowflakes - buy
- 
+
  20/08
  1. modify the poi form to include the attributes (see diagram)  *** HW ****
  2. implement poi steps *** HW ****
+
+ 29/08
+
+ 31/08
+1. When you search on top of the page,
+it should take you again to search
+displaying a map with the results and
+also a list of the pois on the left and
+the pois are gonna be the system wide ones + your ones

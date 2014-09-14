@@ -11,7 +11,7 @@ Feature: Points of Interest (Poi)
 
   Scenario: List of pois
     When I visit the poi listing page
-    Then I should see a list of pois that belongs to me
+    Then I should see a list of pois in a map
 
   Scenario: Create a poi
     Then I should see a message "Poi was successfully created."
