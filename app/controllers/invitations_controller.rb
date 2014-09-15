@@ -25,7 +25,9 @@ class InvitationsController < ApplicationController
     invitation = Invitation.find_by(id: params[:id])
     friend = User.find_by(email: invitation.from)
     current_user.friends << friend
+    friend.friends << current_user
     current_user.save!
+    friend.save!
     invitation.destroy!
     redirect_to root_path, success: 'You have accepted the request'
   end

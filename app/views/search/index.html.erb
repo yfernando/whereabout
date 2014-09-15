@@ -1,1 +1,12 @@
-<%= render partial: 'pois/pois_map', locals: {pois: @pois, display_new_button: false, display_poi_actions: false }%>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>Latest Activity</h1>
+      <% @activities.each do |activity| %>
+      <ul>
+        <li><%= activity.who.email %> has <%= activity.what %></li>
+      </ul>
+    <% end %>
+    </div>
+  </div>
+</div>

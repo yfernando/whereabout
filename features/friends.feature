@@ -1,4 +1,4 @@
-Feature: Adding friends
+Feature: Friends
 
   Background: 
     Given there are 2 users on the system

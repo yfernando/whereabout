@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140914160917) do
+ActiveRecord::Schema.define(version: 20140915002708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: true do |t|
+    t.integer "who_id"
+    t.string  "what"
+  end
+
+  add_index "activities", ["who_id"], name: "index_activities_on_who_id", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "name"
