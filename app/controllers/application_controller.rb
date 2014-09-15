@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout :layout_by_resource
   before_filter :set_system_categories
+  before_filter :get_pending_invitations
+  add_flash_types :error
+  add_flash_types :success
   
   def after_sign_in_path_for(resource)
     search_path
@@ -25,6 +28,12 @@ class ApplicationController < ActionController::Base
       "no_layout"
     else
       "application"
+    end
+  end
+
+  def get_pending_invitations
+    if current_user
+      @invitations = Invitation.where(to: current_user.email)
     end
   end
 end

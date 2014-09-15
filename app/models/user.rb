@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   
   has_many :pois, through: :categories
   has_many :categories
+  has_many :friends, class: User
 end
