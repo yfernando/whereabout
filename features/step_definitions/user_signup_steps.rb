@@ -18,7 +18,7 @@ When(/^I submit the Signup form with my details$/) do
 end
 
 Then(/^I should see the search page$/) do
-  expect(page).to have_content('Where do you want to go today ?')
+  expect(page).to have_content('Poi List:')
   expect(current_path).to eq(search_path)
 end
 

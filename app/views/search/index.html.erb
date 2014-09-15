@@ -3,10 +3,11 @@
     <div class="col-md-8 col-md-offset-2">
       <h1>Latest Activity</h1>
       <% @activities.each do |activity| %>
-      <ul>
-        <li><%= activity.who.email %> has <%= activity.what %></li>
-      </ul>
-    <% end %>
+        <div class="alert alert-info" role="alert">
+          <%= image_tag activity.who.gravatar_url %>
+          <kbd><%= activity.who.email %></kbd> has <%= activity.what %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

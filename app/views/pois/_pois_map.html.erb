@@ -1,15 +1,22 @@
 <div class="row">
   <div class="col-md-3 sidebar">
     <%= link_to 'New Poi', new_poi_path, class:'btn btn-primary' if display_new_button %>
+    <h3>Poi List:</h3>
       <% @pois.each do |poi| %>
-        <div class="poi-list">
-          <h3><%= poi.name %></h3>
-          <p>
-            <%= poi.description %>
-          </p>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= poi.name %></h3>
+          </div>
+          <% if poi.description.present? %>
+            <div class="panel-body">
+              <%= poi.description %>
+            </div>
+          <% end %>
           <% if display_poi_actions %>
-          <%= link_to 'Edit', edit_poi_path(poi) %>
-          <%= link_to 'Delete', poi, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <div class="panel-footer">
+              <%= link_to 'Edit', edit_poi_path(poi), class: 'btn btn-primary btn-xs'%>
+              <%= link_to 'Delete', poi, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%>
+            </div>
           <% end %>
         </div>
       <% end %>

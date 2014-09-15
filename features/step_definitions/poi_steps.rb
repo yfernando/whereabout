@@ -32,12 +32,12 @@ end
 
 When(/^I delete that poi$/) do
   click_link('Back')
-  within("table tbody tr:first-child") do
-    click_link('Destroy')
+  within(".sidebar .panel:last-child") do
+    click_link('Delete')
   end
 end
 
 Then(/^I should see "(.*?)" poi|pois in the poi list$/) do |number|
-  number_of_rows = all("table tbody tr").size
-  expect(number_of_rows).to eq number.to_i
+  pois = all('.sidebar .panel')
+  expect(pois.size).to eq number.to_i
 end

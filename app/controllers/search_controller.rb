@@ -8,7 +8,6 @@ class SearchController < ApplicationController
   def search
     category = Category.find_by(id: params[:category_id]) || all_categories
     @pois = all_pois category
-    # require 'pry'; binding.pry
     render 'search'
   end
 
