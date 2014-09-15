@@ -30,6 +30,19 @@
           navigator.geolocation.getCurrentPosition(function(position){
             var userLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             map.setCenter(userLocation);
+            var userMarker= new google.maps.Marker({
+              position: userLocation,
+              map: map,
+              icon: 'https://cdn3.iconfinder.com/data/icons/iconic-1/32/map_pin_fill-64.png',
+              title: "Your current location"
+             });
+            var infoWindowForUserMarker = new google.maps.InfoWindow({
+               content: "Your current location"
+             });
+
+             google.maps.event.addListener(userMarker, 'click', function() {
+               infoWindowForUserMarker.open(map, userMarker);
+             });
           });
         }
 
@@ -38,6 +51,7 @@
              var poiMarker<%= poi.id %> = new google.maps.Marker({
               position: new google.maps.LatLng(<%= poi.latitude %>,<%= poi.longitude %>),
               map: map,
+              icon: 'https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/48/Map-Marker-Flag--Right-Chartreuse.png',
               title: "<%= poi.name %>"
              });
 
